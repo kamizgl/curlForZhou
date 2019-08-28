@@ -28,8 +28,13 @@ public class CurlWebTest {
         Assert.assertFalse (body.contains ("Proxy-Authorization"));
     }
 
-    @Test
-    public void sslTest(){
-        curl ("curl -k https://lenovo.prod.ondemandconnectivity.com");
+    //add by zhouguoliang 
+    public String TestCurl(String cmdLine){
+        HttpResponse curl = curl(cmdLine);
+        try {
+            return IOUtils.toString (curl.getEntity ().getContent ());
+        } catch (IOException e) {
+            return "exception";
+        }
     }
 }
