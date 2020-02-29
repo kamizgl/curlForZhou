@@ -28,6 +28,8 @@ public class CurlWebTest {
         Assert.assertFalse (body.contains ("Proxy-Authorization"));
     }
 
+
+
     //add by zhouguoliang 
     public String TestCurl(String cmdLine){
         HttpResponse curl = curl(cmdLine);
@@ -37,7 +39,4 @@ public class CurlWebTest {
             return "exception";
         }
     }
-
-
-
 }
